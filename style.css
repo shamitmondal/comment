@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        -45deg,
+        #ff6ec4,
+        #7873f5,
+        #4facfe,
+        #f093fb
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    width: 360px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 22px;
+    margin: 8px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button.yes:hover {
+    box-shadow: 0 0 15px rgba(120,115,245,0.7);
+    background: linear-gradient(
+        to right,
+        #ff6ec4,
+        #7873f5,
+        #7ba2c4
+    );
+}
+
+
+
+button.no {
+    background: #ddd;
+    color: #444;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.code-text {
+    color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+.bengali {
+    background: linear-gradient(
+        to right,
+        #a93f7f,
+        #7875cb,
+        #8eb7db
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Confetti canvas */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+/* Bottom popup animation */
+@keyframes popFromBottom {
+    0% {
+        transform: translateY(60px) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.popup {
+    animation: popFromBottom 0.8s ease-out forwards;
+}
+
+
+/* Bottom popup animation (already added earlier) */
+@keyframes popFromBottom {
+    0% {
+        transform: translateY(60px) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.popup {
+    animation: popFromBottom 0.8s ease-out forwards;
+}
+
+/* Typewriter cursor effect */
+.typewriter::after {
+    content: "|";
+    animation: blink 1s infinite;
+    margin-left: 3px;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
